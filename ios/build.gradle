@@ -1,9 +1,7 @@
+apply plugin: "java"
 apply plugin: "robovm"
-
-repositories {
-    mavenCentral()
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-}
+apply plugin: "idea"
+apply plugin: "eclipse"
 
 ext {
     mainClassName = "com.okode.demo.Demo"
@@ -13,8 +11,16 @@ ext {
 robovm {
     iosSignIdentity        = ""
     iosProvisioningProfile = ""
-    iosSkipSigning         = false
+    iosSkipSigning         = true
     stdoutFifo             = ""
     stderrFifo             = ""
 }
 
+dependencies {
+    compile "org.robovm:robovm-rt:1.2.0"
+    compile "org.robovm:robovm-cocoatouch:1.2.0"
+}
+
+eclipse.project {    
+    natures 'org.robovm.eclipse.RoboVMNature'
+}
