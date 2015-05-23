@@ -19,3 +19,8 @@ android {
     }
 }
 
+dependencies {
+
+    compile project(":common")
+
+}
