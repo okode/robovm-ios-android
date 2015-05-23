@@ -5,10 +5,13 @@ import org.robovm.apple.uikit.UIApplication;
 import org.robovm.apple.uikit.UIApplicationDelegateAdapter;
 import org.robovm.apple.uikit.UIApplicationLaunchOptions;
 
+import com.okode.demo.common.Common;
+
 public class Demo extends UIApplicationDelegateAdapter {
 
     @Override
     public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
+        Common.showMessage("Hello world from iOS");
         return true;
     }
 
