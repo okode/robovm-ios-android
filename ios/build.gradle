@@ -19,6 +19,7 @@ robovm {
 dependencies {
     compile "org.robovm:robovm-rt:1.2.0"
     compile "org.robovm:robovm-cocoatouch:1.2.0"
+    compile project(":common")
 }
 
 eclipse.project {    
