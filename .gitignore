@@ -2,3 +2,7 @@
 *.jar
 .gradle
 build
+
+.idea
+*.iml
+local.properties
