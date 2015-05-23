@@ -1,2 +1,3 @@
-# robovm-ios-android
-Simple RoboVM iOS / Android APP
+RoboVM iOS / Android APP
+========================
+Simple RoboVM APP for iOS and Android
