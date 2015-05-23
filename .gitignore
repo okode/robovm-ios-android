@@ -6,3 +6,8 @@ build
 .idea
 *.iml
 local.properties
+
+.classpath
+.project
+.settings
+bin
