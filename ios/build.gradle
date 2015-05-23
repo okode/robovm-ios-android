@@ -1,0 +1,20 @@
+apply plugin: "robovm"
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+ext {
+    mainClassName = "com.okode.demo.Demo"
+    roboVMVersion = "1.2.0"
+}
+
+robovm {
+    iosSignIdentity        = ""
+    iosProvisioningProfile = ""
+    iosSkipSigning         = false
+    stdoutFifo             = ""
+    stderrFifo             = ""
+}
+
