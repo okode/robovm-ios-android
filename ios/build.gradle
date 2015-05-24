@@ -17,8 +17,8 @@ robovm {
 }
 
 dependencies {
-    compile "org.robovm:robovm-rt:1.2.0"
-    compile "org.robovm:robovm-cocoatouch:1.2.0"
+    compile "org.robovm:robovm-rt:$roboVMVersion"
+    compile "org.robovm:robovm-cocoatouch:$roboVMVersion"
     compile project(":common")
 }
 
