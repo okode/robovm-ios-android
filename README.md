@@ -2,8 +2,19 @@ RoboVM iOS / Android APP
 ========================
 Simple RoboVM APP for iOS and Android
 
-Building
---------
+Development
+-----------
+
+** iOS
+
+Install RoboVM plugin for Eclipse. Import Gradle project.
+
+** Android
+
+From Android Studio import existing Gradle project.
+
+Building with Gradle
+--------------------
 
     ./gradlew build createIPA
 
