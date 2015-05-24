@@ -24,5 +24,6 @@ android {
 }
 
 dependencies {
+    compile "org.roboguice:roboguice:3.0.1"
     compile project(":common")
 }
