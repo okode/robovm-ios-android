@@ -11,7 +11,7 @@ public class Demo extends UIApplicationDelegateAdapter {
 
     @Override
     public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
-        Common.showMessage("Hello world from iOS");
+        Common.showMessage("Starting iOS APP");
         return true;
     }
 
