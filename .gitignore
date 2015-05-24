@@ -13,3 +13,4 @@ local.properties
 bin
 
 robovm-logs
+robovm-build
