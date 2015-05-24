@@ -3,11 +3,6 @@ apply plugin: "robovm"
 apply plugin: "idea"
 apply plugin: "eclipse"
 
-ext {
-    mainClassName = "com.okode.demo.Demo"
-    roboVMVersion = "1.2.0"
-}
-
 robovm {
     iosSignIdentity        = ""
     iosProvisioningProfile = ""
@@ -15,6 +10,8 @@ robovm {
     stdoutFifo             = ""
     stderrFifo             = ""
 }
+
+ext.roboVMVersion = "1.2.0"
 
 dependencies {
     compile "org.robovm:robovm-rt:$roboVMVersion"
