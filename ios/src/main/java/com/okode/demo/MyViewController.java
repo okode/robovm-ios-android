@@ -10,58 +10,49 @@ import org.robovm.apple.uikit.UIViewController;
 import org.robovm.objc.annotation.CustomClass;
 import org.robovm.objc.annotation.IBOutlet;
 
+import com.okode.demo.common.Common;
+import com.okode.demo.common.Data;
+
 @CustomClass("MyViewController")
 public class MyViewController extends UIViewController {
-    private UITextField textField;
-    private UILabel label;
-    private String string;
+	
+	private UITextField textField;
+	private UILabel label;
+	private String value;
 
-    @Override
-    public void viewDidLoad() {
-        super.viewDidLoad();
+	@Override
+	public void viewDidLoad() {
+		super.viewDidLoad();
+		textField.setDelegate(new UITextFieldDelegateAdapter() {
+			@Override
+			public boolean shouldReturn(UITextField textField) {
+				textField.resignFirstResponder();
+				updateString();
+				return true;
+			}
+		});
+		label.setText(textField.getPlaceholder());
+	}
 
-        textField.setDelegate(new UITextFieldDelegateAdapter() {
-            @Override
-            public boolean shouldReturn(UITextField textField) {
-                // When the user presses return, take focus away from the text
-                // field so that the keyboard is dismissed.
-                textField.resignFirstResponder();
-                // Invoke the method that changes the greeting.
-                updateString();
+	private void updateString() {
+		value = Common.getValueFromJson(Data.JSON, textField.getText());
+		label.setText(value);
+	}
 
-                return true;
-            }
-        });
+	@Override
+	public void touchesBegan(NSSet<UITouch> touches, UIEvent event) {
+		textField.resignFirstResponder();
+		textField.setText(value);
+		super.touchesBegan(touches, event);
+	}
 
-        // When the view first loads, display the placeholder text that's in the
-        // text field in the label.
-        label.setText(textField.getPlaceholder());
-    }
+	@IBOutlet
+	public void setTextField(UITextField textField) {
+		this.textField = textField;
+	}
 
-    private void updateString() {
-        // Store the text of the text field in the 'string' instance variable.
-        string = textField.getText();
-        // Set the text of the label to the value of the 'string' instance
-        // variable.
-        label.setText(string);
-    }
-
-    @Override
-    public void touchesBegan(NSSet<UITouch> touches, UIEvent event) {
-        // Dismiss the keyboard when the view outside the text field is touched.
-        textField.resignFirstResponder();
-        // Revert the text field to the previous value.
-        textField.setText(string + "colega");
-        super.touchesBegan(touches, event);
-    }
-
-    @IBOutlet
-    public void setTextField(UITextField textField) {
-        this.textField = textField;
-    }
-
-    @IBOutlet
-    public void setLabel(UILabel label) {
-        this.label = label;
-    }
+	@IBOutlet
+	public void setLabel(UILabel label) {
+		this.label = label;
+	}
 }

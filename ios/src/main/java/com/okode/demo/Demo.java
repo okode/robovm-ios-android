@@ -9,15 +9,15 @@ import com.okode.demo.common.Common;
 
 public class Demo extends UIApplicationDelegateAdapter {
 
-    @Override
-    public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
-        Common.showMessage("Starting iOS APP");
-        return true;
-    }
+	@Override
+	public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
+		Common.showMessage("Starting iOS APP");
+		return true;
+	}
 
-    public static void main(String[] args) {
-        try (NSAutoreleasePool pool = new NSAutoreleasePool()) {
-            UIApplication.main(args, null, Demo.class);
-        }
-    }
+	public static void main(String[] args) {
+		try (NSAutoreleasePool pool = new NSAutoreleasePool()) {
+			UIApplication.main(args, null, Demo.class);
+		}
+	}
 }
