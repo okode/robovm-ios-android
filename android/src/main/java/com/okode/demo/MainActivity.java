@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.okode.demo.common.Common;
+import com.okode.demo.common.Data;
 
 public class MainActivity extends Activity {
 
@@ -29,5 +33,12 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void btnQueryOnClick(View view) {
+        EditText keyView = (EditText) findViewById(R.id.txtKey);
+        TextView valueView = (TextView) findViewById(R.id.txtValue);
+        String value = Common.getValueFromJson(Data.JSON, keyView.getText().toString());
+        valueView.setText(value);
     }
 }
