@@ -15,12 +15,13 @@
         android:id="@+id/txtKey"
         android:layout_below="@+id/txtValue"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:inputType="text"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Query"
+        android:text="@string/query_text"
         android:id="@+id/btnQuery"
         android:layout_below="@+id/txtKey"
         android:layout_alignParentStart="true"

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Demo</string>
     <string name="json_key">JSON Key</string>
-    <string name="action_settings">Settings</string>
+    <string name="query_text">Query</string>
 </resources>
