@@ -11,7 +11,7 @@ robovm {
     stderrFifo             = ""
 }
 
-ext.roboVMVersion = "1.2.0"
+ext.roboVMVersion = "1.3.0"
 
 dependencies {
     compile "org.robovm:robovm-rt:$roboVMVersion"
